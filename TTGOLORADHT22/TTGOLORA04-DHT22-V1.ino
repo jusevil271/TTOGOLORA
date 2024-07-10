@@ -82,13 +82,17 @@ void loop() {
   // Compute heat index in Celsius (isFahreheit = false)
   float hic = dht.computeHeatIndex(t, h, false);
 
+  display.cls();
   Serial.print(F("Humidity: "));
   Serial.print(h);
+  //display.setCursor(0,0);
   display.print(F("Humidity: "));
-  display.println(h);
-  Serial.print(F("%  Temperature: "));
+  display.print(h);
+  display.println("%");
+  Serial.print(F("% Temperature: "));
   Serial.print(t);
-  display.print(F("% Temperature: "));
+  //display.setCursor(0,10);
+  display.print(F("Temperature: "));
   display.print(t);
   Serial.print(F("°C "));
   display.println(F("°C "));
